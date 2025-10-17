@@ -23,7 +23,7 @@ def main():
         print(f"Result: {result['last_code']}")
 
     pass_1, score_list = evaluate(fixed_codes, test_ds)
-    print(score_list)
+
     print(f"|-----" * 13 + f"|")
     print("All queries processed")
     print(f"Pass@1: {pass_1}")

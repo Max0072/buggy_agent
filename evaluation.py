@@ -38,7 +38,6 @@ def evaluate(code, tests):
         if result["exit_code"] == 0:
             scores.append(1)
         else:
-            print(result)
             scores.append(0)
     return sum(scores) / len(tests), scores
 
