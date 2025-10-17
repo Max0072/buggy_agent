@@ -1,7 +1,6 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer, TextIteratorStreamer
 import torch
 from threading import Thread
-from typing import TypedDict, List, Any
 
 
 def get_device():
@@ -49,6 +48,7 @@ class CodingModel:
         content = self.tokenizer.decode(output_ids[index:], skip_special_tokens=True).strip("\n")
         return content
 
+    # forward with real time text translation
     def forward_with_thread(self, model_inputs):
         print("Forward pass...")
         gen_kwargs = dict(**model_inputs,

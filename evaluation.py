@@ -1,21 +1,20 @@
 import re
 from code_intepretor import DockerCodeRunner
-from typing import TypedDict, List, Any
 
 header = \
 """from __future__ import annotations
 from typing import Any, Optional, List, Dict, Set, Tuple"""
 
-
-def prepare_results(results):
-    new_results = []
-    for result in results:
-        search = re.search(r"```python(.*?)```", result, re.S)
+# extract the code
+def prepare_results(ds_fixed):
+    new_fixed = []
+    for fixed in ds_fixed:
+        search = re.search(r"```python(.*?)```", fixed, re.S)
         code = search.group(1)
-        new_results.append(code)
-    return new_results
+        new_fixed.append(code)
+    return new_fixed
 
-
+# run single test
 def run_code_with_test(code, test):
     code_with_test = header + "\n" + code + "\n" + test
     code_runner = DockerCodeRunner()
