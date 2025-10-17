@@ -2,6 +2,11 @@ import re
 from code_intepretor import DockerCodeRunner
 from typing import TypedDict, List, Any
 
+header = \
+"""from __future__ import annotations
+from typing import Any, Optional, List, Dict, Set, Tuple"""
+
+
 def prepare_results(results):
     new_results = []
     for result in results:
@@ -12,7 +17,7 @@ def prepare_results(results):
 
 
 def run_code_with_test(code, test):
-    code_with_test = code + "\n" + test
+    code_with_test = header + "\n" + code + "\n" + test
     code_runner = DockerCodeRunner()
     result = code_runner.run({
         "language": "python",

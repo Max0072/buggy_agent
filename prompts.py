@@ -18,7 +18,7 @@ Fix the code so that it:
 Runs without errors;
 Passes all tests;
 Preserves the function’s intended purpose and correct signature;
-Uses clean, idiomatic Python, do not use typing.
+Uses clean, idiomatic Python.
 If the error is logical, identify likely edge cases that caused the failure and correct the function’s behavior.
 Do not add unnecessary prints, logs, comments, or rename variables unless strictly necessary.
 Output format:
