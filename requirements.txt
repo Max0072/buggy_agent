@@ -1,0 +1,6 @@
+langgraph
+docker
+datasets
+accelerate
+transformers
+torch
